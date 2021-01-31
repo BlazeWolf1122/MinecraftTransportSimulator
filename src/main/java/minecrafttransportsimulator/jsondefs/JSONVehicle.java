@@ -17,6 +17,7 @@ public class JSONVehicle extends AJSONMultiModelProvider<JSONVehicle.VehicleGene
     public VehicleCar car;
     @JSONRequired
     public List<VehiclePart> parts;
+    public List<JSONVehicleThrust> thrustForces;
     @JSONRequired
     public List<VehicleCollisionBox> collision;
     public List<VehicleDoor> doors;
