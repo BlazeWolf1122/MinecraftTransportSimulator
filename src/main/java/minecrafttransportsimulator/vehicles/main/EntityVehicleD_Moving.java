@@ -51,6 +51,7 @@ abstract class EntityVehicleD_Moving extends EntityVehicleC_Colliding{
 	public boolean goingInReverse;
 	public boolean slipping;
 	public boolean skidSteerActive;
+	public double prevGroundVelocity;
 	public double groundVelocity;
 	
 	//Towing data.
@@ -253,6 +254,7 @@ abstract class EntityVehicleD_Moving extends EntityVehicleC_Colliding{
 		//Add rotation based on our turning factor, and then re-set ground states.
 		//For turning, we keep turning momentum if the wheels are turned.
 		normalizedGroundVelocityVector.set(motion.x, 0D, motion.z);
+		prevGroundVelocity = groundVelocity;
 		groundVelocity = normalizedGroundVelocityVector.length();
 		normalizedGroundVelocityVector.normalize();
 		normalizedGroundHeadingVector.set(headingVector.x, 0D, headingVector.z).normalize();
